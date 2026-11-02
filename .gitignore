@@ -1,0 +1,24 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+*.trx
+
+# SPA output is built in CI / Docker, never committed
+web/node_modules/
+web/dist/
+src/PulseBoard.Api/wwwroot/
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
