@@ -23,6 +23,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 ENV ASPNETCORE_URLS=http://+:8080 \
     ConnectionStrings__Default="Data Source=/data/pulseboard.db"
+# The runtime image's non-root "app" user must own the data directory or SQLite cannot create its file.
+RUN mkdir -p /data && chown app:app /data
 VOLUME /data
 EXPOSE 8080
 
