@@ -1,0 +1,16 @@
+services:
+  pulseboard:
+    build: .
+    image: pulseboard:local
+    ports:
+      - "8080:8080"
+    environment:
+      # Replace in any real deployment; must be at least 32 bytes.
+      Jwt__Key: "compose-demo-key-change-me-before-exposing-this-0001"
+      Telemetry__SimulatorEnabled: "true"
+    volumes:
+      - pulseboard-data:/data
+    restart: unless-stopped
+
+volumes:
+  pulseboard-data:

@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+**/node_modules/
+**/dist/
+**/wwwroot/
+**/*.db
+**/*.db-*
+.git/
+.github/
+docs/
+*.md
